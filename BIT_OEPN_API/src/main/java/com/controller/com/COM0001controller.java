@@ -1,5 +1,4 @@
 package com.controller.com;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import common.Utils;
 
 
 /*
- *  login 기능을 담당하는 컨트롤
+ *  login 기능을 담당하는 컨트롤러 
  */
 
 @RestController
