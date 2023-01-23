@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.upbit.UPBITMAP0001">
+   
+    <!-- 시크릿 키 조회 -->
+	<select id="getApikey" resultType="T_IFO_APIKEY" >
+		select
+			ACCESS_KEY,
+			SECRET_KEY
+		from
+			T_IFO_APIKEY 
+		WHERE 
+			MEMBERS_ID    = #{membersId}
+			AND DIV_CODE  = #{divCode}
+	</select>  
+</mapper>
