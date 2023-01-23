@@ -1,4 +1,4 @@
-package com.mapper.upbit;
+package com.mapper.com;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,7 +10,7 @@ import com.dto.T_IFO_MEMBERS;
  */
 
 @Mapper
-public interface UPBITMAP0001 {
+public interface UBTMAP0001 {
 	
     T_IFO_APIKEY getApikey(String membersId, String divCode) throws Exception;
 }

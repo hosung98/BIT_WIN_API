@@ -1,6 +1,4 @@
-package com.controller.upbit;
-
-import com.service.upbit.UPBITServicelmpl;
+package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,18 +7,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.service.com.UBTServicelmpl;
+
 
 
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080") // 컨트롤러에서 설정
-public class UPBIT0001controller {
+public class UBT0001controller {
 	
 	
-	UPBITServicelmpl upbitservice;
+	UBTServicelmpl upbitservice;
 	
 	@Autowired
-	public UPBIT0001controller(UPBITServicelmpl upbitservice) {
+	public UBT0001controller(UBTServicelmpl upbitservice) {
 		this.upbitservice = upbitservice;
 	}
 	
