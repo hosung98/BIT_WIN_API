@@ -1,4 +1,4 @@
-package com.service.upbit;
+package com.service.com;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -16,20 +16,20 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.dto.T_IFO_APIKEY;
 import com.dto.T_IFO_MEMBERS;
 import com.mapper.com.COMMAP0001;
-import com.mapper.upbit.UPBITMAP0001;
+import com.mapper.com.UBTMAP0001;
 
 /*
  *  login 기능을 담당하는 service
  */
 
 @Service
-public class UPBITServicelmpl {
+public class UBTServicelmpl {
     
     
-	UPBITMAP0001 mappers;
+	UBTMAP0001 mappers;
 	
     @Autowired
-    public UPBITServicelmpl(UPBITMAP0001 mappers) {
+    public UBTServicelmpl(UBTMAP0001 mappers) {
 		this.mappers = mappers;
 	}
 

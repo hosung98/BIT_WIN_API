@@ -1,4 +1,4 @@
-package com.controller.com;
+package com.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,6 @@ public class COM0001controller {
 	public String checkStatus() {
 		return "code: 200";
 	}
-	
 	
 	// 로그인 조회 
 	@RequestMapping(value="/find", method=RequestMethod.GET)
