@@ -2,10 +2,12 @@
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
-@SpringBootApplication(scanBasePackages = {"com.controller","com.service","com.mappers","com.dto"})
+@SpringBootApplication(scanBasePackages = {"com.controller","com.service","com.mapper","com.dto"})
 @MapperScan(basePackages = "com.mapper")
 public class ApplicationRun {
 

@@ -3,20 +3,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mapper.com.COMMAP0001">
+<mapper namespace="com.mapper.COMMAP0001">
    
     <!-- 로그인 조회 -->
 	<select id="loginfind" resultType="T_IFO_MEMBERS" >
         SELECT 
-	        ID,
-			PASSWD,
-			PHONE,
-			NAME,
-			ADDRESS
+	        id,
+			passwd,
+			phone,
+			name,
+			address
         FROM 
         	T_IFO_MEMBERS 
         WHERE 
-        	ID = #{id} 
-        	AND PASSWD = #{passwd}
+        	id = #{id} 
+        	AND passwd = #{passwd};
 	</select>  
 </mapper>

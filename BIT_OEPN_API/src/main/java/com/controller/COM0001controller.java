@@ -3,24 +3,27 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dto.T_IFO_MEMBERS;
-import com.service.com.COM0001Servicelmpl;
+import com.service.COM0001Servicelmpl;
 
+import common.JwtTokenProvider;
 import common.Utils;
 
 
 
+
 /*
- *  login 기능을 담당하는 컨트롤러 
+ * UICOM0001 - 로그인 컨트롤러 
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080") // 컨트롤러에서 설정
+@CrossOrigin(origins = "http://localhost:8080") 
 public class COM0001controller {
 	
 	
@@ -31,30 +34,34 @@ public class COM0001controller {
 		this.com0001service = com0001service;
 	}
 	
-	// Server 통신 체크 
-	@RequestMapping(value="/status", method=RequestMethod.GET)
+	// Server check 
+	@GetMapping("/status")
 	public String checkStatus() {
 		return "code: 200";
 	}
 	
-	// 로그인 조회 
-	@RequestMapping(value="/find", method=RequestMethod.GET)
-	public Map<String, Object> loginAction(@RequestParam("id") String id, @RequestParam("passwd") String passwd){
+	// login check 
+	@PostMapping("/login")
+	@ResponseBody
+	public Map<String, Object> loginAction(@ModelAttribute T_IFO_MEMBERS member){
 		Map<String, Object> data = null;
+
 		try {
-			T_IFO_MEMBERS obj = com0001service.loginfind(id,passwd);
-		    //Login success!!
+			T_IFO_MEMBERS obj = com0001service.loginfind(member.getId(),member.getPasswd());
+			//Login success!!
 		    if (obj != null) {
-		    	System.out.println("login success");
-		    	data = Utils.sendAjax("200", "login success", obj);
+		    	JwtTokenProvider jwt = new JwtTokenProvider();
+		    	String token = jwt.createToken(obj.getId());
+		    	System.out.println("token : " + token);
+		    	data = Utils.sendAjax("200", "login success", obj,token);
 		    //Login Error!!
 		    }else {
-		    	System.out.println("login error");
-		    	data = Utils.sendAjax("400", "login fail", null);
+		    	data = Utils.sendAjax("400", "login fail", null,null);
 		    }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	   return data;		
 	}
 }
