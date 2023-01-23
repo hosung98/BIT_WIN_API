@@ -1,6 +1,5 @@
 package com.dto;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,70 +9,48 @@ import lombok.ToString;
  * T_IFO_MEMBERS(회원정보)
  */
 
+
 @ToString
+@Getter
+@Setter
 public class T_IFO_MEMBERS {
-	public String ID;
-	public String PASSWD;
-	public String PHONE;
-	public String NAME;
-	public String ADDRESS;
-	public String ACCESS_KEY;
-	public String SECRET_KEY;
-	public String ACCESS_IP;
-	public String ENDDATE;
-	public String getID() {
-		return ID;
+	public String id;
+	public String passwd;
+	public String phone;
+	public String name;
+	public String address;
+	
+	public String getId() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getPASSWD() {
-		return PASSWD;
+	public String getPasswd() {
+		return passwd;
 	}
-	public void setPASSWD(String pASSWD) {
-		PASSWD = pASSWD;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
-	public String getPHONE() {
-		return PHONE;
+	public String getPhone() {
+		return phone;
 	}
-	public void setPHONE(String pHONE) {
-		PHONE = pHONE;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getNAME() {
-		return NAME;
+	public String getName() {
+		return name;
 	}
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getADDRESS() {
-		return ADDRESS;
+	public String getAddress() {
+		return address;
 	}
-	public void setADDRESS(String aDDRESS) {
-		ADDRESS = aDDRESS;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getACCESS_KEY() {
-		return ACCESS_KEY;
-	}
-	public void setACCESS_KEY(String aCCESS_KEY) {
-		ACCESS_KEY = aCCESS_KEY;
-	}
-	public String getSECRET_KEY() {
-		return SECRET_KEY;
-	}
-	public void setSECRET_KEY(String sECRET_KEY) {
-		SECRET_KEY = sECRET_KEY;
-	}
-	public String getACCESS_IP() {
-		return ACCESS_IP;
-	}
-	public void setACCESS_IP(String aCCESS_IP) {
-		ACCESS_IP = aCCESS_IP;
-	}
-	public String getENDDATE() {
-		return ENDDATE;
-	}
-	public void setENDDATE(String eNDDATE) {
-		ENDDATE = eNDDATE;
-	}
+	
+	
 	
 }

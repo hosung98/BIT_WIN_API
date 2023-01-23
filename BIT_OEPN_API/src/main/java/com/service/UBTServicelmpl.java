@@ -1,4 +1,4 @@
-package com.service.com;
+package com.service;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.dto.T_IFO_APIKEY;
-import com.dto.T_IFO_MEMBERS;
-import com.mapper.com.COMMAP0001;
-import com.mapper.com.UBTMAP0001;
+import com.mapper.UBTMAP0001;
 
 /*
  *  login 기능을 담당하는 service

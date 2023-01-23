@@ -1,9 +1,8 @@
-package com.mapper.com;
+package com.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
 import com.dto.T_IFO_APIKEY;
-import com.dto.T_IFO_MEMBERS;
 
 /*
  *  로그인 한 사람의 업비트 계좌정보 조회 
