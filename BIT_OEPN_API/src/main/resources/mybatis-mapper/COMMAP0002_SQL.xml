@@ -22,4 +22,9 @@
 		#{address}
 		);
 	</insert>
+	
+	<!-- 중복 검사  -->
+	<select id="selectMembers" resultType="int">
+		select count(*) from T_IFO_MEMBERS where ID = #{id}	
+	</select>
 </mapper>

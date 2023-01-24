@@ -25,4 +25,8 @@ public class COM0002Servicelmpl {
 		mappers.insertMembers(members);
 	}
 	
+	public int selectMembers(String id) throws Exception{
+		return mappers.selectMembers(id);
+	}
+	
 }
