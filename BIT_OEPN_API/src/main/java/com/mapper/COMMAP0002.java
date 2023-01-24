@@ -13,6 +13,7 @@ public interface COMMAP0002 {
 	
 	void insertMembers(T_IFO_MEMBERS members) throws Exception;
 	
+	int selectMembers(String id) throws Exception;
 }
 
 

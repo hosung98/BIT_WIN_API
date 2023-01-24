@@ -40,8 +40,17 @@ public class COM0002controller {
 	@ResponseBody
 	public Map<String, Object> loginAction(@ModelAttribute T_IFO_MEMBERS member){
 		Map<String, Object> data = null;
-
+		
 		try {
+			int cnt = com0002service.selectMembers(member.getId());
+			
+			//중복 id 오류 
+			if (cnt > 0) {
+				data = Utils.sendAjax("401", "duplicate id fail", null,null);
+				return data;
+			}
+			
+			//회원가입 진행 
 			com0002service.insertMembers(member);
 		    data = Utils.sendAjax("200", "sign up success",member,null);
 		} catch (Exception e) {
