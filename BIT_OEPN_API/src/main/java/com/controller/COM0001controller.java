@@ -41,7 +41,7 @@ public class COM0001controller {
 	}
 	
 	// login check 
-	@PostMapping("/login")
+	@PostMapping("/login.do")
 	@ResponseBody
 	public Map<String, Object> loginAction(@ModelAttribute T_IFO_MEMBERS member){
 		Map<String, Object> data = null;
